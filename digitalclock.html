@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL CLOCK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">bu 
+        <div class="display">
+            <div id="time" ></div>
+        </div>
+        <span></span>
+        <span></span>
+    </div>
+    <audio id="mysong" >
+        <source src="css1/Atak Gaya - Abhijeet Version.mp3"type="audio/mp3">
+    </audio>
+
+    <script>
+        setInterval(()=>{
+            var mysong=document.getElementById("mysong");
+        var icon=document.getElementById("icon")
+        mysong.play()
+        const time=document.querySelector("#time")
+        let date=new Date();
+        let hours =date.getHours();
+        let minutes=date.getMinutes();
+        let seconds=date.getSeconds();
+        let day_night="AM";
+        if(hours>12){
+            day_night="PM";
+        }
+        time.textContent=hours+ ":"+minutes+":"+seconds +" "+day_night;
+        });
+    </script>
+</body>
+</html>
